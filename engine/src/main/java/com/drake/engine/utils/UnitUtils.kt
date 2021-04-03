@@ -293,7 +293,7 @@ fun String?.format(
 ): String {
     return when {
         isNullOrEmpty() -> "0.00"
-        this.contains(",") || this.contains("¥") -> this
+        this!!.contains(",") || this.contains("¥") -> this
         else -> {
             val numberFormat = NumberFormat.getInstance()
             numberFormat.minimumFractionDigits = 2
